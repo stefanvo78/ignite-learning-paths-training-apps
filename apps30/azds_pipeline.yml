@@ -39,7 +39,7 @@ steps:
 - task: AzureCLI@2
   displayName: 'Create Resource Group'
   inputs:
-    azureSubscription: 'Ignite the Tour(cd400f31-6f94-40ab-863a-673192a3c0d0)'
+    azureSubscription: 'DbContainerInWebAppAZ'
     scriptType: 'bash'
     scriptLocation: 'inlineScript'
     inlineScript: 'az group create --subscription "$(subName)" --name $(resourceGroup) --location $(location)'
@@ -48,7 +48,7 @@ steps:
 - task: AzureCLI@2
   displayName: 'Create Virtual Network'
   inputs:
-    azureSubscription: 'Ignite the Tour(cd400f31-6f94-40ab-863a-673192a3c0d0)'
+    azureSubscription: 'DbContainerInWebAppAZ'
     scriptType: 'bash'
     scriptLocation: 'inlineScript'
     inlineScript: 'az network vnet create --name igniteapps30vnet --subscription  "$(subName)" --resource-group $(resourceGroup)   --subnet-name default'
@@ -57,7 +57,7 @@ steps:
 - task: AzureCLI@2
   displayName: 'Create Cosmos DB'
   inputs:
-    azureSubscription: 'Ignite the Tour(cd400f31-6f94-40ab-863a-673192a3c0d0)'
+    azureSubscription: 'DbContainerInWebAppAZ'
     scriptType: 'bash'
     scriptLocation: 'inlineScript'
     inlineScript: 'az cosmosdb create --name $(cosmosdbName) --resource-group $(resourceGroup) --kind MongoDB --subscription "$(subName)"'
@@ -66,7 +66,7 @@ steps:
 - task: AzureCLI@2
   displayName: 'Create SQL Instance'
   inputs:
-    azureSubscription: 'Ignite the Tour(cd400f31-6f94-40ab-863a-673192a3c0d0)'
+    azureSubscription: 'DbContainerInWebAppAZ'
     scriptType: 'bash'
     scriptLocation: 'inlineScript'
     inlineScript: |
@@ -80,7 +80,7 @@ steps:
 - task: AzureCLI@2
   displayName: 'Create ACR'
   inputs:
-    azureSubscription: 'Ignite the Tour(cd400f31-6f94-40ab-863a-673192a3c0d0)'
+    azureSubscription: 'DbContainerInWebAppAZ'
     scriptType: 'bash'
     scriptLocation: 'inlineScript'
     inlineScript: 'az acr create --resource-group $(resourceGroup) --name $(acrName) --sku Basic --subscription  "$(subName)" --admin-enabled true'
