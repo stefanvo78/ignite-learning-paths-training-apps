@@ -1,10 +1,7 @@
 # aps30 infra pipeline
 ### The following variables should be MANUALLY set as secret variables via the web interface  ### Secret variables are encrypted at rest with a 2048-bit RSA key
 
-### Example values:
 
-# adminUser twtadmin
-# adminPassword twtapps30pD
 
 trigger:
   branches:
@@ -17,13 +14,13 @@ trigger:
 variables:
 
   # resource group
-  resourceGroup: 'igniteapps30'
+  resourceGroup: 'DBContainerInWebApp'
 
   # location
-  location: 'eastus'
+  location: 'westeurope'
 
   # subscription name
-  subName: 'Ignite The Tour'
+  subName: 'Microsoft Azure Internal Consumption'
 
   # cosmos db name
   cosmosdbName: 'apps30twtnosqlge'
@@ -32,7 +29,7 @@ variables:
   sqldbName: 'apps30twtsql'
 
   # acr name
-  acrName: 'igniteapps30acr'
+  acrName: 'dbcontainerwebapp30acr'
 
 pool:
   vmImage: 'ubuntu-latest'
