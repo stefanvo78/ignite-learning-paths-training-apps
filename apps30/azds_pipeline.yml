@@ -23,10 +23,10 @@ variables:
   subName: 'Microsoft Azure Internal Consumption'
 
   # cosmos db name
-  cosmosdbName: 'apps30twtnosqlge'
+  cosmosdbName: 'dbcontainerinwebappcosmos'
 
   # sql db name
-  sqldbName: 'apps30twtsql'
+  sqldbName: 'dbcontainerinwebappsql'
 
   # acr name
   acrName: 'dbcontainerwebapp30acr'
